@@ -11,7 +11,6 @@ A modern, responsive web application that calculates the shortest path between a
 ## Live Demo 🚀
 **[View the Live Application](https://shortest-path-finder-seven.vercel.app/)**
 
-*(Note: Pushing this updated code to your GitHub repository will automatically update the live link above!)*
 
 ## Tech Stack 💻
 - **Frontend**: React.js, Custom CSS
