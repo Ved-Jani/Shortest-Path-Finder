@@ -1,0 +1,165 @@
+/* Routes card styling */
+.pathAnswerCard {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  animation: fadeIn 0.4s ease-out;
+  margin-top: 16px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Stats Row */
+.routeStatsRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #0b0f19;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 12px 20px;
+}
+
+.routeStatItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.statLabel {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #64748b;
+  letter-spacing: 0.5px;
+}
+
+.statValue {
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #f1f5f9;
+}
+
+.statValue.startNode, .statValue.endNode {
+  color: #6366f1;
+}
+
+.routeStatArrow {
+  color: #475569;
+  display: flex;
+  align-items: center;
+}
+
+/* Distance Card */
+.distanceBadgeCard {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, rgba(20, 184, 166, 0.06) 0%, rgba(99, 102, 241, 0.06) 100%);
+  border: 1px solid rgba(20, 184, 166, 0.15);
+  border-radius: 12px;
+  padding: 12px 16px;
+}
+
+.distanceIcon {
+  background-color: rgba(20, 184, 166, 0.15);
+  color: #14b8a6;
+  padding: 6px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.distanceText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.distanceLabel {
+  font-size: 10px;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.distanceValue {
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #14b8a6;
+}
+
+/* Path Sequence */
+.pathSequenceContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pathTitle {
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #cbd5e1;
+}
+
+.pathStepsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  background-color: #0b0f19;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.pathNodeChip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background-color: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  cursor: default;
+}
+
+.pathNodeChip.start, .pathNodeChip.end {
+  background-color: rgba(99, 102, 241, 0.15);
+  border-color: rgba(99, 102, 241, 0.5);
+  font-weight: 700;
+  box-shadow: 0 0 8px rgba(99, 102, 241, 0.1);
+}
+
+.nodeNumber {
+  font-size: 11px;
+  font-weight: 700;
+  color: #cbd5e1;
+}
+
+.pathNodeChip.start .nodeNumber, .pathNodeChip.end .nodeNumber {
+  color: #818cf8;
+}
+
+.pathNodeChip:hover {
+  background-color: #334155;
+  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.pathStepConnector {
+  color: #475569;
+  display: flex;
+  align-items: center;
+}

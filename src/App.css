@@ -1,0 +1,502 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #090d16;
+  color: #e2e8f0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(20, 184, 166, 0.08) 0%, transparent 45%);
+  background-attachment: fixed;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0d1527;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* App Container */
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 24px;
+  gap: 24px;
+}
+
+/* Header styling */
+.appHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 24px;
+  background: rgba(30, 41, 59, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+.headerIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #6366f1 0%, #14b8a6 100%);
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
+.headerTextGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.projectHeader {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: -0.5px;
+  background: linear-gradient(to right, #ffffff, #94a3b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.projectSubheader {
+  font-size: 14px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Layout */
+.contentLayout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 24px;
+  flex: 1;
+}
+
+/* Cards (Glassmorphism) */
+.controlPanelCard, .mapViewCard {
+  background: rgba(17, 24, 39, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.controlPanelCard {
+  height: fit-content;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 12px;
+  color: #14b8a6;
+}
+
+.cardHeader h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #f1f5f9;
+}
+
+/* Form inputs & buttons */
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inputFieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.inputLabelText {
+  font-size: 13px;
+  font-weight: 600;
+  color: #94a3b8;
+  letter-spacing: 0.5px;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 12px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.inputIcon.srcPin {
+  background-color: #10b981;
+  box-shadow: 0 0 8px #10b981;
+}
+
+.inputIcon.destPin {
+  background-color: #ef4444;
+  box-shadow: 0 0 8px #ef4444;
+}
+
+.sourceInput, .destinationInput {
+  width: 100%;
+  padding: 12px 12px 12px 32px;
+  background-color: #0b0f19;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: #f8fafc;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  transition: all 0.2s ease-in-out;
+}
+
+.sourceInput:focus, .destinationInput:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+  background-color: #0e1524;
+}
+
+/* Buttons styling */
+.buttonButtonGroup {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.formButton {
+  flex: 2;
+  padding: 12px;
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.formButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(79, 70, 229, 0.35);
+  filter: brightness(1.1);
+}
+
+.formButton:active {
+  transform: translateY(1px);
+}
+
+.formButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.clearButton {
+  flex: 1;
+  padding: 12px;
+  background-color: transparent;
+  color: #94a3b8;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.clearButton:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #f8fafc;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Banners (Error & Status) */
+.errorBanner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  color: #f87171;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.statusBanner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: rgba(99, 102, 241, 0.08);
+  border: 1px solid rgba(99, 102, 241, 0.15);
+  color: #a5b4fc;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.loadingPulse {
+  width: 8px;
+  height: 8px;
+  background-color: #6366f1;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite ease-in-out;
+  flex-shrink: 0;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.8); opacity: 0.5; }
+  50% { transform: scale(1.3); opacity: 1; box-shadow: 0 0 8px #6366f1; }
+  100% { transform: scale(0.8); opacity: 0.5; }
+}
+
+/* Spinner */
+.loadingSpinnerWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.loadingSpinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #ffffff;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Maps display area styling */
+.mapTabsContainer {
+  display: flex;
+  background-color: #0b0f19;
+  padding: 4px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  gap: 4px;
+  width: fit-content;
+}
+
+.mapTabButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: #94a3b8;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mapTabButton:hover {
+  color: #f1f5f9;
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.mapTabButton.active {
+  color: #ffffff;
+  background-color: rgba(30, 41, 59, 0.8);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Maps grids */
+.Maps {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.Maps.side-by-side {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+}
+
+.mapContainer {
+  display: flex;
+  flex-direction: column;
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 16px;
+  width: 100%;
+  height: calc(100vh - 200px);
+  max-height: 750px;
+  min-height: 400px;
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.mapLabel {
+  font-family: 'Outfit', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #94a3b8;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.mapLabel::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.outlineMapWrapper .mapLabel::before {
+  background-color: #14b8a6;
+  box-shadow: 0 0 6px #14b8a6;
+}
+
+.satelliteMapWrapper .mapLabel::before {
+  background-color: #6366f1;
+  box-shadow: 0 0 6px #6366f1;
+}
+
+/* Map Image Holders */
+.outMap, .satMap {
+  width: 100%;
+  flex: 1;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transition: transform 0.3s ease;
+}
+
+.outMap {
+  background-image: url(./Maps/outlineMap.png);
+}
+
+.satMap {
+  background-image: url(./Maps/satMap.png);
+}
+
+/* Specific zoom for Campus Map in Side-by-Side view */
+.Maps.side-by-side .satMap {
+  background-size: 140%;
+  background-position: 45% 45%;
+}
+
+/* Map frame zoom hover effect */
+.mapContainer:hover .outMap, 
+.mapContainer:hover .satMap {
+  transform: scale(1.01);
+}
+
+/* Results section placeholder wrapper */
+.projectDisplay {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Footer styling */
+.appFooter {
+  text-align: center;
+  padding: 24px 0 10px;
+  font-size: 12px;
+  color: #475569;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  margin-top: auto;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .contentLayout {
+    grid-template-columns: 1fr;
+  }
+  
+  .controlPanelCard {
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainContainer {
+    padding: 16px;
+    gap: 16px;
+  }
+  
+  .appHeader {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .hide-mobile {
+    display: none;
+  }
+  
+  .Maps.side-by-side {
+    grid-template-columns: 1fr;
+  }
+}
